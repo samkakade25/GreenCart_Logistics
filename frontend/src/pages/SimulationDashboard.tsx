@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Heading, Text, Spinner, Button } from "grommet";
+import { Box, Heading, Text, Spinner, Button, Menu } from "grommet";
 import { Bar } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../config";
@@ -163,6 +163,15 @@ export default function DashboardPage() {
           Dashboard - Latest Simulation
         </Heading>
         <Box direction="row" gap="small">
+        <Menu
+            label="Management"
+            items={[
+              { label: "Drivers", onClick: () => navigate("/drivers") },
+              { label: "Routes", onClick: () => navigate("/routes") },
+              { label: "Orders", onClick: () => navigate("/orders") },
+            ]}
+            primary
+          />
           <Button
             label="Run Simulation"
             onClick={navigateSimulation}

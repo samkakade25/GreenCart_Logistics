@@ -5,6 +5,9 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import SimulationPage from "./pages/SimulationPage";
 import DashboardPage from "./pages/SimulationDashboard";
+import DriverPage from "./pages/DriverPage";
+import RoutesPage from "./pages/RoutesPage";
+import OrdersPage from "./pages/OrdersPage";
 
 function PrivateRoute({ children }: { children: ReactElement }) {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -21,6 +24,9 @@ export default function App() {
 
         <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
         <Route path="/simulation" element={<PrivateRoute><SimulationPage /></PrivateRoute>} />
+        <Route path="/drivers" element={<PrivateRoute><DriverPage /></PrivateRoute>} />
+        <Route path="/routes" element={<PrivateRoute><RoutesPage /></PrivateRoute>} />
+        <Route path="/orders" element={<PrivateRoute><OrdersPage /></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
   );
