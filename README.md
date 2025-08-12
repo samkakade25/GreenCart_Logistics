@@ -2,6 +2,8 @@
 
 ## Backend Structure:
 
+### Backend Deployment Link: https://greencart-logistics-1plr.onrender.com/
+
 1. First Generated Prisma Client 
 2. loadData from csv file
 

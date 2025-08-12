@@ -18,7 +18,7 @@ app.use(express.json());
 app.use('/api/drivers', driverRoutes);
 app.use('/api/routes', routeRoutes);
 app.use('/api/orders', orderRoutes);
-app.use('/api/simulation', authenticateJWT, simulationRoutes);
+app.use('/api/simulation', simulationRoutes);
 app.use('/api/auth', authRoutes);
 
 // Health check

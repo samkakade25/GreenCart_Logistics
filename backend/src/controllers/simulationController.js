@@ -118,3 +118,34 @@ export const runSimulation = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+
+export const getLatestSimulation = async (req, res) => {
+  try {
+    const latestSimulation = await prisma.simulation.findFirst({
+      orderBy: { timestamp: "desc" },
+    });
+
+    if (!latestSimulation) {
+      return res.status(404).json({ error: "No simulation results found" });
+    }
+
+    res.json(latestSimulation);
+  } catch (error) {
+    console.error("Error fetching simulation:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+export const getAllSimulations = async (req, res) => {
+  try {
+    const simulations = await prisma.simulation.findMany({
+      orderBy: { timestamp: "desc" },
+    });
+
+    res.json(simulations);
+  } catch (error) {
+    console.error("Error fetching simulations:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
