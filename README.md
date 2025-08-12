@@ -1,5 +1,9 @@
 # GreenCart Logistics
 
+## Frontend Structure
+
+### Frontend Deployment Link: https://green-cart-logistics-git-main-samkakade25s-projects.vercel.app/
+
 ## Backend Structure:
 
 ### Backend Deployment Link: https://greencart-logistics-1plr.onrender.com/
